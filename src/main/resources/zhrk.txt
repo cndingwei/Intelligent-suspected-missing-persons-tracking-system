@@ -1,0 +1,5 @@
+driverClass = com.ibm.db2.jcc.DB2Driver
+jdbcUrl = jdbc:db2://dashdb-entry-yp-dal09-07.services.dal.bluemix.net:50000/BLUDB
+user = dash7802
+password = 4c7Duh__MVaT
+devMode = true

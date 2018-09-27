@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>无相智慧人口失踪追查系统</title>
+	<meta name="description" content="无相智慧人口失踪追查系统">
+	<meta name="keywords" content="无相智慧人口失踪追查系统">
+	<!--视口的 meta 标签，重写了默认的视口。
+	width属性设置屏幕宽度，用来告诉浏览器使用原始的分辨率。
+	initial-scale 属性是视口最初的比例。当设置为 1.0 时，将呈现设备的原始宽度。-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- icon图标logo -->
+	<link rel="shortcut icon" href="img/favicon.ico">		
+	<!--Bootstrap css-->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/docs.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!--Custom css-->
+	<link rel="stylesheet" href="css/global.css">
+	<link rel="stylesheet" href="css/nav.css">
+	</head>
+	<body>
+	<!--头部导航begin-->
+	<header class="navbar navbar-expand navbar-dark bg-info  flex-column flex-md-row bd-navbar"> 
+		<a class="navbar-brand" href="#">无相智慧人口失踪追查系统</a>
+	  	<ul class="navbar-nav flex-row ml-md-auto d-md-flex">
+	    	<li class="nav-item text-nowrap">
+	      		<a class="nav-link" href="signin.html">退出</a>
+	   	 	</li>
+	  	</ul>
+	</header>
+	<!--内容 begin--> 
+	<div class="container-fluid">
+		<div class="row">
+		    <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+		    	<!--急救，小屏幕导航按钮-->
+		      	<form class="bd-search d-flex align-items-center">
+					<button class="btn btn-danger btn-lg w-100" data-toggle="modal" data-target="#CryHelpNews" type="submit"><i class="fa fa-exclamation mr-1"></i>急救</button>
+		        	<button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3 collapsed" type="button" data-toggle="collapse" data-target="#sidenav">
+				        <i class="fa fa-bars fa-3x mr-1"></i>
+			        </button>		        
+		      	</form>
+		      	<!--左侧导航-->
+			    <nav class="bd-links collapse" id="sidenav">
+			        <div class="bd-toc-item mx-3"> 
+			        	<a class="bd-toc-link collapsed" href="#" data-toggle="collapse" data-target="#sidenavUser" ><i class="fa fa-user fa-lg mr-1"></i>用户展示</a>
+			          	<ul class="nav bd-sidenav collapse show" id="sidenavUser">
+				          	<li><a href="user-registerMissingPerson.html"><i class="fa fa-fw fa-pencil mr-1"></i>登记失踪人口</a></li>
+				            <li><a href="user-PublicMissingPerson.html"><i class="fa fa-fw fa-eye mr-1"></i>公视信息</a></li>
+				            <li><a href="user-SendNewsSuccess.html"><i class="fa fa-fw fa-commenting mr-1"></i>消息<span class="badge badge-light text-info">9</span></a></li>
+			          	</ul>
+			        </div>
+			        <div class="bd-toc-item mx-3">
+			        	<a class="bd-toc-link collapsed" href="#" data-toggle="collapse" data-target="#sidenavSystem" ><i class="fa fa-cog fa-lg mr-1"></i>系统管理</a>
+				        <ul class="nav bd-sidenav collapse show" id="sidenavSystem">
+				          	<li><a href="system-RoleManageList.html"><i class="fa fa-fw fa-vcard mr-1"></i>角色管理</a></li>
+				            <li><a href="system-AccountManageList.html"><i class="fa fa-fw fa-address-book mr-1"></i>账号管理</a></li>
+				            <li class="active bd-sidenav-active"><a href="system-MissingPersonList.html"><i class="fa fa-fw fa-address-book-o mr-1"></i>失踪人口管理</a></li>
+				            <li><a href="system-RegisterUserList.html"><i class="fa fa-fw fa-user-circle-o mr-1"></i>推送人管理</a></li>
+				            <li><a href="system-SendNewsList.html"><i class="fa fa-fw fa-comment mr-1"></i>已推送信息管理</a></li>
+				            <li><a href="system-UserBasicManageList.html"><i class="fa fa-fw fa-newspaper-o mr-1"></i>人员基础信息管理</a></li>
+				            <li><a href="system-MenuManageList.html"><i class="fa fa-fw fa-navicon mr-1"></i>菜单管理</a></li>
+				        </ul>
+			        </div>
+			    </nav>
+		    </div>
+		    <!--右侧主内容-->
+		    <main class="col-12 col-md-9 col-xl-10 py-3 bd-content" role="main">
+				<div class=" mx-auto py-2">
+					<h3 class="mb-3 font-weight-normal text-left">失踪人口列表</h3>
+		          	<div class="table-responsive-sm  bg-white border border-light shadow">
+			            <table class="table table-striped table-hover MymissPerList">
+			              	<thead class="bg-info text-white">
+				                <tr>
+				                  	<th scope="col">序号</th>
+				                  	<th scope="col">失踪人照片</th>
+				                  	<th scope="col">失踪人姓名</th>
+				                  	<th scope="col">失踪人性别</th>
+				                 	<th scope="col">失踪人身份证</th>
+				                 	<th scope="col">失踪人电话</th>
+				                 	<th scope="col">失踪时间</th>
+				                 	<th scope="col">失踪地点</th>
+				                 	<th scope="col">登记人</th>
+				                 	<th scope="col">操作</th>
+				                </tr>
+			             	</thead>
+			              	<tbody>
+			                	<tr>
+				                  	<td scope="row">1</td>
+				                  	<td><img src="img/photo1.jpg"/></td>
+				                  	<td><span>莫某某</span></td>
+				                  	<td><span>女</span></td>
+				                  	<td><span>410881165743256543</span></td>
+				                  	<td><span>15109876543</span></td>
+				                  	<td><span>2018-07-11 10:30</span></td>
+				                  	<td><span>黄河路与沁园路交叉口</span></td>
+				                  	<td><span>张某某</span></td>
+				                  	<td>
+				                  		<button class="btn btn-info btn-sm my-1" data-toggle="modal" data-target="#detailsSuccuss"><i class="fa fa-eye mr-1"></i>查看</button>
+				                  		<button class="btn btn-info btn-sm my-1" type="submit" data-toggle="modal" data-target="#confirmSuccuss"><i class="fa fa-check mr-1"></i>审核通过</button>
+				                  	</td>
+			                	</tr>
+				                <tr>
+				                  	<td scope="row">2</td>
+				                  	<td><img src="img/photo2.jpg"/></td>
+				                  	<td><span>莫某某</span></td>
+				                  	<td><span>女</span></td>
+				                  	<td><span>410881165743256543</span></td>
+				                  	<td><span>15109876543</span></td>
+				                  	<td><span>2018-07-11 10:30</span></td>
+				                  	<td><span>黄河路与沁园路交叉口</span></td>
+				                  	<td><span>张某某</span></td>
+				                  	<td>
+				                  		<button class="btn btn-info btn-sm my-1" data-toggle="modal" data-target="#detailsSuccuss"><i class="fa fa-eye mr-1"></i>查看</button>
+				                  		<button class="btn btn-info btn-sm my-1" type="submit" data-toggle="modal" data-target="#confirmSuccuss"><i class="fa fa-check mr-1"></i>审核通过</button>
+				                  	</td>
+				                </tr>
+			                	<tr>
+				                  	<td scope="row">3</td>
+				                  	<td><img src="img/photo3.jpg"/></td>
+				                  	<td><span>莫某某</span></td>
+				                  	<td><span>女</span></td>
+				                  	<td><span>410881165743256543</span></td>
+				                  	<td><span>15109876543</span></td>
+				                  	<td><span>2018-07-11 10:30</span></td>
+				                  	<td><span>黄河路与沁园路交叉口</span></td>
+				                  	<td><span>张某某</span></td>
+				                  	<td>
+				                  		<button class="btn btn-info btn-sm my-1" data-toggle="modal" data-target="#detailsSuccuss"><i class="fa fa-eye mr-1"></i>查看</button>
+				                  		<button class="btn btn-info btn-sm my-1" type="submit" data-toggle="modal" data-target="#confirmSuccuss"><i class="fa fa-check mr-1"></i>审核通过</button>
+				                  	</td>
+			                	</tr>
+				                <tr>
+				                  	<td scope="row">4</td>
+				                  	<td><img src="img/photo4.jpg"/></td>
+				                  	<td><span>莫某某</span></td>
+				                  	<td><span>女</span></td>
+				                  	<td><span>410881165743256543</span></td>
+				                  	<td><span>15109876543</span></td>
+				                  	<td><span>2018-07-11 10:30</span></td>
+				                  	<td><span>黄河路与沁园路交叉口</span></td>
+				                  	<td><span>张某某</span></td>
+				                  	<td>
+				                  		<button class="btn btn-info btn-sm my-1" data-toggle="modal" data-target="#detailsSuccuss"><i class="fa fa-eye mr-1"></i>查看</button>
+				                  		<button class="btn btn-info btn-sm my-1" type="submit" data-toggle="modal" data-target="#confirmSuccuss"><i class="fa fa-check mr-1"></i>审核通过</button>
+				                  	</td>
+				                </tr>
+			                	<tr>
+				                  	<td scope="row">5</td>
+				                  	<td><img src="img/photo5.jpg"/></td>
+				                  	<td><span>莫某某</span></td>
+				                  	<td><span>女</span></td>
+				                  	<td><span>410881165743256543</span></td>
+				                  	<td><span>15109876543</span></td>
+				                  	<td><span>2018-07-11 10:30</span></td>
+				                  	<td><span>黄河路与沁园路交叉口</span></td>
+				                  	<td><span>张某某</span></td>
+				                  	<td>
+				                  		<button class="btn btn-info btn-sm my-1" data-toggle="modal" data-target="#detailsSuccuss"><i class="fa fa-eye mr-1"></i>查看</button>
+				                  		<button class="btn btn-info btn-sm my-1" type="submit" data-toggle="modal" data-target="#confirmSuccuss"><i class="fa fa-check mr-1"></i>审核通过</button>
+				                  	</td>
+			                	</tr>
+				                <tr>
+				                  	<td scope="row">6</td>
+				                  	<td><img src="img/photo6.jpg"/></td>
+				                  	<td><span>莫某某</span></td>
+				                  	<td><span>女</span></td>
+				                  	<td><span>410881165743256543</span></td>
+				                  	<td><span>15109876543</span></td>
+				                  	<td><span>2018-07-11 10:30</span></td>
+				                  	<td><span>黄河路与沁园路交叉口</span></td>
+				                  	<td><span>张某某</span></td>
+				                  	<td>
+				                  		<button class="btn btn-info btn-sm my-1" data-toggle="modal" data-target="#detailsSuccuss"><i class="fa fa-eye mr-1"></i>查看</button>
+				                  		<button class="btn btn-info btn-sm my-1" type="submit" data-toggle="modal" data-target="#confirmSuccuss"><i class="fa fa-check mr-1"></i>审核通过</button>
+				                  	</td>
+				                </tr>
+			                	<tr>
+				                  	<td scope="row">1</td>
+				                  	<td><img src="img/photo1.jpg"/></td>
+				                  	<td><span>莫某某</span></td>
+				                  	<td><span>女</span></td>
+				                  	<td><span>410881165743256543</span></td>
+				                  	<td><span>15109876543</span></td>
+				                  	<td><span>2018-07-11 10:30</span></td>
+				                  	<td><span>黄河路与沁园路交叉口</span></td>
+				                  	<td><span>张某某</span></td>
+				                  	<td>
+				                  		<button class="btn btn-info btn-sm my-1" data-toggle="modal" data-target="#detailsSuccuss"><i class="fa fa-eye mr-1"></i>查看</button>
+				                  		<button class="btn btn-info btn-sm my-1" type="submit" data-toggle="modal" data-target="#confirmSuccuss"><i class="fa fa-check mr-1"></i>审核通过</button>
+				                  	</td>
+			                	</tr>
+				                <tr>
+				                  	<td scope="row">2</td>
+				                  	<td><img src="img/photo2.jpg"/></td>
+				                  	<td><span>莫某某</span></td>
+				                  	<td><span>女</span></td>
+				                  	<td><span>410881165743256543</span></td>
+				                  	<td><span>15109876543</span></td>
+				                  	<td><span>2018-07-11 10:30</span></td>
+				                  	<td><span>黄河路与沁园路交叉口</span></td>
+				                  	<td><span>张某某</span></td>
+				                  	<td>
+				                  		<button class="btn btn-info btn-sm my-1" data-toggle="modal" data-target="#detailsSuccuss"><i class="fa fa-eye mr-1"></i>查看</button>
+				                  		<button class="btn btn-info btn-sm my-1" type="submit" data-toggle="modal" data-target="#confirmSuccuss"><i class="fa fa-check mr-1"></i>审核通过</button>
+				                  	</td>
+				                </tr>
+			                	<tr>
+				                  	<td scope="row">3</td>
+				                  	<td><img src="img/photo3.jpg"/></td>
+				                  	<td><span>莫某某</span></td>
+				                  	<td><span>女</span></td>
+				                  	<td><span>410881165743256543</span></td>
+				                  	<td><span>15109876543</span></td>
+				                  	<td><span>2018-07-11 10:30</span></td>
+				                  	<td><span>黄河路与沁园路交叉口</span></td>
+				                  	<td><span>张某某</span></td>
+				                  	<td>
+				                  		<button class="btn btn-info btn-sm my-1" data-toggle="modal" data-target="#detailsSuccuss"><i class="fa fa-eye mr-1"></i>查看</button>
+				                  		<button class="btn btn-info btn-sm my-1" type="submit" data-toggle="modal" data-target="#confirmSuccuss"><i class="fa fa-check mr-1"></i>审核通过</button>
+				                  	</td>
+			                	</tr>
+				                <tr>
+				                  	<td scope="row">4</td>
+				                  	<td><img src="img/photo4.jpg"/></td>
+				                  	<td><span>莫某某</span></td>
+				                  	<td><span>女</span></td>
+				                  	<td><span>410881165743256543</span></td>
+				                  	<td><span>15109876543</span></td>
+				                  	<td><span>2018-07-11 10:30</span></td>
+				                  	<td><span>黄河路与沁园路交叉口</span></td>
+				                  	<td><span>张某某</span></td>
+				                  	<td>
+				                  		<button class="btn btn-info btn-sm my-1" data-toggle="modal" data-target="#detailsSuccuss"><i class="fa fa-eye mr-1"></i>查看</button>
+				                  		<button class="btn btn-info btn-sm my-1" type="submit" data-toggle="modal" data-target="#confirmSuccuss"><i class="fa fa-check mr-1"></i>审核通过</button>
+				                  	</td>
+				                </tr>
+			                	<tr>
+				                  	<td scope="row">5</td>
+				                  	<td><img src="img/photo5.jpg"/></td>
+				                  	<td><span>莫某某</span></td>
+				                  	<td><span>女</span></td>
+				                  	<td><span>410881165743256543</span></td>
+				                  	<td><span>15109876543</span></td>
+				                  	<td><span>2018-07-11 10:30</span></td>
+				                  	<td><span>黄河路与沁园路交叉口</span></td>
+				                  	<td><span>张某某</span></td>
+				                  	<td>
+				                  		<button class="btn btn-info btn-sm my-1" data-toggle="modal" data-target="#detailsSuccuss"><i class="fa fa-eye mr-1"></i>查看</button>
+				                  		<button class="btn btn-info btn-sm my-1" type="submit" data-toggle="modal" data-target="#confirmSuccuss"><i class="fa fa-check mr-1"></i>审核通过</button>
+				                  	</td>
+			                	</tr>
+				                <tr>
+				                  	<td scope="row">6</td>
+				                  	<td><img src="img/photo6.jpg"/></td>
+				                  	<td><span>莫某某</span></td>
+				                  	<td><span>女</span></td>
+				                  	<td><span>410881165743256543</span></td>
+				                  	<td><span>15109876543</span></td>
+				                  	<td><span>2018-07-11 10:30</span></td>
+				                  	<td><span>黄河路与沁园路交叉口</span></td>
+				                  	<td><span>张某某</span></td>
+				                  	<td>
+				                  		<button class="btn btn-info btn-sm my-1" data-toggle="modal" data-target="#detailsSuccuss"><i class="fa fa-eye mr-1"></i>查看</button>
+				                  		<button class="btn btn-info btn-sm my-1" type="submit" data-toggle="modal" data-target="#confirmSuccuss"><i class="fa fa-check mr-1"></i>审核通过</button>
+				                  	</td>
+				                </tr>
+			              	</tbody>
+			            </table>
+		          	</div>
+			    </div>
+		        <p class="text-center mx-auto my-3">技术支持：河南七星数据分析有限公司</p>
+		    </main>
+		</div>
+	</div> 
+	<!--内容end-->
+
+	<!-- 查看详情弹出框 -->
+	<div class="modal fade" id="detailsSuccuss" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+	  	<div class="modal-dialog modal-dialog-centered" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-header bg-info text-white">
+			        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-newspaper-o mr-1"></i>详细信息</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			         	<span aria-hidden="true">&times;</span>
+			        </button>
+			     </div>
+		      	<div class="modal-body text-center">
+					<div class="card mb-4 shadow">
+						<div class="card-header bg-danger">
+							<img class="card-img-top rounded" src="img/photo1.jpg" alt="Card image cap"   >
+						</div>
+						<ul class="list-group list-group-flush text-left">
+						    <li class="list-group-item">失踪人姓名：<span>莫某某</span></li>
+						    <li class="list-group-item">失踪人性别：<span>女</span></li>
+						    <li class="list-group-item">失踪人身份证号：<span>410881187602045678</span></li>
+						    <li class="list-group-item">失踪人电话：<span>13882375648</span></li>
+						    <li class="list-group-item">失踪时间：<span>2018-07-11 10：30</span></li>
+						    <li class="list-group-item">失踪地点：<span>黄河路与沁园路交叉口</span></li>
+						    <li class="list-group-item">描述：
+						    	<p class="card-text">某某某因什么事情，什么时候在什么地方走失，身穿什么衣服，戴什么帽子，短发，白鞋，高170，胖</p>
+						    </li>
+						 </ul>
+						<div class="card-footer text-white bg-success">
+						    <small class="d-block">联系人：<span>张某某</span></small>
+						    <small class="d-block">联系人电话：<span>15190876543</span></small>
+						</div>
+					</div>
+		      	</div>
+		      	<div class="modal-footer">
+		      		<button type="button" class="btn btn-info" data-dismiss="modal">确定</button>
+		      	</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- 审核通过弹出框 -->
+	<div class="modal fade" id="confirmSuccuss" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+	  	<div class="modal-dialog modal-dialog-centered" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-header bg-info text-white">
+			        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-lightbulb-o mr-1"></i>提示</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			         	<span aria-hidden="true">&times;</span>
+			        </button>
+			     </div>
+		      	<div class="modal-body text-center">
+		        	<i class="fa fa-check text-info mr-1" aria-hidden="true"></i>审核成功！
+		      	</div>
+		      	<div class="modal-footer">
+		        	<button type="button" class="btn btn-info" data-dismiss="modal"   data-toggle="modal" data-target="#StartWastonAnalysisNone">开始Waston分析</button>
+		        	<button type="button" class="btn btn-info" data-dismiss="modal">确定</button>
+		      	</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- 开始Waston分析未找到结果页弹出框 -->
+	<div class="modal fade  bd-example-modal-lg" id="StartWastonAnalysisNone" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+	  	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-header bg-info text-white">
+			        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-lightbulb-o mr-1"></i>Waston分析</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			         	<span aria-hidden="true">&times;</span>
+			        </button>
+			     </div>
+		      	<div class="modal-body text-center">
+		        	<i class="fa fa-spinner fa-spin text-info mr-1" aria-hidden="true"></i>正在分析请稍等！
+		      	</div>
+		      	<div class="modal-body text-center">
+		        	<i class="fa fa-close text-info mr-1" aria-hidden="true"></i>未找到！
+		      	</div>
+		      	<div class="modal-footer">
+		      		<button type="submit" class="btn btn-info" data-dismiss="modal"  data-toggle="modal" data-target="#SendNewsSuccess">推送到登记人</button>
+		      		<button type="submit" class="btn btn-info" >继续上传Waston并分析</button>
+		      		<button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
+		      	</div>
+	    	</div>
+	  	</div>
+	</div>
+
+	<!-- 开始Waston分析已找到结果页弹出框 -->
+	<div class="modal fade bd-example-modal-lg" id="StartWastonAnalysisHave" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+	  	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-header bg-info text-white">
+			        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-lightbulb-o mr-1"></i>Waston分析</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			         	<span aria-hidden="true">&times;</span>
+			        </button>
+			     </div>
+		      	<div class="modal-body text-center">
+		        	<h5 class="text-info">路线轨迹：</h5>
+		        	<p><span>市政府</span>--<span>世纪广场</span>--<span>沁园丹尼斯</span>--<span>交通银行</span>--<span>南蟒河</span></p>
+		        	<h5 class="text-info">照片轨迹：</h5>
+		        	<div class="col">
+		        		<figure class="figure">
+						   <img src="img/photo1.jpg" class="figure-img img-fluid rounded img-thumbnail" >
+						   <figcaption class="figure-caption">市政府</figcaption>
+						</figure>
+		        		<figure class="figure">
+						   <img src="img/photo1.jpg" class="figure-img img-fluid rounded img-thumbnail" >
+						   <figcaption class="figure-caption">世纪广场</figcaption>
+						</figure>
+		        		<figure class="figure">
+						   <img src="img/photo1.jpg" class="figure-img img-fluid rounded img-thumbnail" >
+						   <figcaption class="figure-caption">沁园丹尼斯</figcaption>
+						</figure>
+		        		<figure class="figure">
+						   <img src="img/photo1.jpg" class="figure-img img-fluid rounded img-thumbnail" >
+						   <figcaption class="figure-caption">交通银行</figcaption>
+						</figure>
+		        		<figure class="figure">
+						   <img src="img/photo1.jpg" class="figure-img img-fluid rounded img-thumbnail" >
+						   <figcaption class="figure-caption">南蟒河</figcaption>
+						</figure>
+		        	</div>
+		      	</div>
+		      	<div class="modal-footer">
+		      		<button type="submit" class="btn btn-info" data-dismiss="modal"  data-toggle="modal" data-target="#SendNewsSuccess">推送到登记人</button>
+		      		<button type="button" class="btn btn-info" data-dismiss="modal">取消</button>
+		      	</div>
+	    	</div>
+	  	</div>
+	</div>
+	<!-- 推送消息成功弹出框 -->
+	<div class="modal fade" id="SendNewsSuccess" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+	  	<div class="modal-dialog modal-dialog-centered" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-header bg-info text-white">
+			        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-lightbulb-o mr-1"></i>提示</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			         	<span aria-hidden="true">&times;</span>
+			        </button>
+			     </div>
+		      	<div class="modal-body text-center">
+		        	<i class="fa fa-check text-info mr-1" aria-hidden="true"></i>推送成功！
+		      	</div>
+		      	<div class="modal-footer">
+		      		<button type="button" class="btn btn-info" data-dismiss="modal">确定</button>
+		      	</div>
+	    	</div>
+	  	</div>
+	</div>
+
+
+
+	<!-- 急救信息弹出框 -->
+	<div class="modal fade" id="CryHelpNews" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+	  	<div class="modal-dialog modal-dialog-centered" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-header bg-danger text-white">
+			        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-exclamation mr-1"></i>急救信息</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			         	<span aria-hidden="true">&times;</span>
+			        </button>
+			     </div>
+		      	<div class="modal-body text-center">
+		        	<form>
+					  	<div class="form-group row">
+					    	<label for="CryHelpName" class="col-sm-3 col-form-label col-form-label-sm">姓名</label>
+					    	<div class="col-sm-9">
+					      		<input id="CryHelpName" type="text" class="form-control form-control-sm"  value=" ">
+					    	</div>
+					  	</div>
+					  	<div class="form-group row">
+					    	<label for="CryHelpCardID" class="col-sm-3 col-form-label col-form-label-sm">身份证号</label>
+					    	<div class="col-sm-9">
+					      		<input id="CryHelpCardID" type="text" class="form-control form-control-sm"  value=" ">
+					    	</div>
+					  	</div>
+					  	<div class="form-group row">
+					    	<label for="CryHelpPhoneNum" class="col-sm-3 col-form-label col-form-label-sm">手机号</label>
+					    	<div class="col-sm-9">
+					      		<input id="CryHelpPhoneNum" type="number" class="form-control form-control-sm"  value=" ">
+					    	</div>
+					  	</div>
+					  	<div class="form-group row">
+					    	<label for="CryHelpAdress" class="col-sm-3 col-form-label col-form-label-sm">地点</label>
+					    	<div class="col-sm-9">
+					      		<input id="CryHelpAdress" type="text" class="form-control form-control-sm"  value=" ">
+					    	</div>
+					  	</div>
+					  	<div class="form-group row">
+					    	<label for="CryHelpRemark" class="col-sm-3 col-form-label col-form-label-sm">描述</label>
+					    	<div class="col-sm-9">
+					      		<textarea id="CryHelpRemark" type="textarea" class="form-control"  value=" "></textarea>
+					    	</div>
+					  	</div>
+					</form>
+		      	</div>
+		      	<div class="modal-footer">
+		      		<button type="submit" class="btn btn-danger" data-dismiss="modal" data-toggle="modal"  data-target="#SendCryHelpSuccess">发送急救消息</button>
+		        	<button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+		      	</div>
+	    	</div>
+	  	</div>
+	</div>	
+	<!-- 发送急救消息成功弹出框 -->
+	<div class="modal fade" id="SendCryHelpSuccess" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+	  	<div class="modal-dialog modal-dialog-centered" role="document">
+	    	<div class="modal-content">
+	      		<div class="modal-header bg-info text-white">
+			        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-lightbulb-o mr-1"></i>提示</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			         	<span aria-hidden="true">&times;</span>
+			        </button>
+			     </div>
+		      	<div class="modal-body text-center">
+		        	<i class="fa fa-check text-info mr-1" aria-hidden="true"></i>发送成功！
+		      	</div>
+		      	<div class="modal-footer">
+		      		<button type="button" class="btn btn-info" data-dismiss="modal">确定</button>
+		      	</div>
+	    	</div>
+	  	</div>
+	</div>
+
+	<!--jquery js-->
+	<script type="text/javascript" src="js/jquery v3.3.1.js"></script>
+	<!--Bootstrap js-->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/docs.min.js"></script>
+	<!--Custom js-->
+	<script type="text/javascript">
+	
+	    
+	</script>
+	</body>
+</html>

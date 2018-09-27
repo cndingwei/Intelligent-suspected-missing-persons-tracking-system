@@ -1,0 +1,47 @@
+html,body{height: 100%;font-size: 14px;}
+body {background-color: #f8f9fa!important;}
+.centerbody {display: -ms-flexbox;display: flex;-ms-flex-align: center;align-items: center;}
+
+.indexImg{max-width: 1024px !important;}
+.bgHeart{width:100%;}
+
+.indexModel{height: 150px; line-height: 150px; text-align: center; font-size: 26px;color: #fff; cursor: pointer;}
+.indexModel a{color: #fff; text-decoration: none ;width: 100%;height: 100%;display: inline-block;}
+.text-indent{text-indent: 28px;font-size: 16px;}
+
+.form-row{margin-right: 0 !important; margin-left: 0 !important;}
+
+
+.MyRegmissPer .row{margin-left: 0 !important;margin-right: 0 !important;}
+.MyRegmissPer label{font-size: 16px; text-align:left !important;}
+#missPerPhotoImg{width: 250px;}
+
+
+.card{text-align: center !important;}
+.card img{width:100px !important;}
+.card .list-group {font-size: 14px;}
+
+.MymissPerList{font-size: 12px;}
+.MymissPerList img{max-height: 45px;}
+.MymissPerList td{vertical-align: middle!important;}
+
+
+#FindSamePer img{width: 150px !important;height: 220px;;}
+
+.shadow-sm {box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;}
+.shadow {box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;}
+.shadow-lg {box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;}
+.shadow-none { box-shadow: none !important; }
+
+.bd-toc-item {border-bottom: 1px dashed #dfdfdf;}
+.bd-toc-item .bd-toc-link{font-size: 16px;}
+
+.navLogo{width: 230px;}
+.navRight{width: calc(100% - 230px);}
+
+
+
+/*theme-switcher*/
+.ft_theme_switcher{position:fixed;top:60px;left:-215px;z-index:1071;width:215px;height: calc(100vh - 60px);}
+.ft_theme_switcher .toggle{top:15px;cursor:pointer;right:-31px;position:absolute;}
+
